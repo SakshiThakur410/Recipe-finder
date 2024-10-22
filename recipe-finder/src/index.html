@@ -35,17 +35,44 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
+<script>
+  async function getRecipe() {
+      // const query = document.getElementById('recipeInput').value;
+      const apiUrl = `https://api.api-ninjas.com/v1/recipe?query=pasta&offset=10`;
+      const apiKey = "tAm7eY3d3Tnfzx2liDhy9A==ksCEcJqB4K1DZYLE";
+
+      try {
+          const response = await fetch(apiUrl, {
+              method: 'GET',
+              headers: {
+                  'X-Api-Key': apiKey
+              }
+          });
+
+          if (!response.ok) {
+              throw new Error(`Error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log(data)
+       
+      } catch (error) {
+          console.log(error)
+      }
+  }
+</script>
 
 <body class="index-page">
 
   <header id="header" class="header fixed-top">
-
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-end justify-content-md-between">
         
-        <a href="#book-a-table" class="cta-btn">Find Your Taste</a>
+        <a href="#new-section" class="cta-btn" onclick="getRecipe()">Find Your Taste</a>
       </div>
-    </div><!-- End Top Bar -->
+    </div>
+    
+    
 
     <div class="branding d-flex align-items-cente">
 
@@ -55,6 +82,8 @@
           <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">Delicious</h1>
         </a>
+
+        <!-- End Top Bar -->
 
         <nav id="navmenu" class="navmenu">
           <ul>
@@ -166,6 +195,13 @@
       </div>
 
     </section><!-- /About Section -->
+    
+    <section id="new-section" class="pink-section">
+      <div class="container">
+        <h2>New Section</h2>
+        <p>This is a new section with a pink background.</p>
+      </div>
+    </section>
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section">
