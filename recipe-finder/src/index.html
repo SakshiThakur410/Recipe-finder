@@ -35,32 +35,7 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-<script>
-  async function getRecipe() {
-      // const query = document.getElementById('recipeInput').value;
-      const apiUrl = `https://api.api-ninjas.com/v1/recipe?query=pasta&offset=10`;
-      const apiKey = "tAm7eY3d3Tnfzx2liDhy9A==ksCEcJqB4K1DZYLE";
 
-      try {
-          const response = await fetch(apiUrl, {
-              method: 'GET',
-              headers: {
-                  'X-Api-Key': apiKey
-              }
-          });
-
-          if (!response.ok) {
-              throw new Error(`Error: ${response.status}`);
-          }
-
-          const data = await response.json();
-          console.log(data)
-       
-      } catch (error) {
-          console.log(error)
-      }
-  }
-</script>
 
 <body class="index-page">
 
@@ -196,12 +171,7 @@
 
     </section><!-- /About Section -->
     
-    <section id="new-section" class="pink-section">
-      <div class="container">
-        <h2>New Section</h2>
-        <p>This is a new section with a pink background.</p>
-      </div>
-    </section>
+    
 
     <!-- Why Us Section -->
     <section id="why-us" class="why-us section">
